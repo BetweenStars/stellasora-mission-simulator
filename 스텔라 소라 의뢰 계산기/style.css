@@ -1,0 +1,243 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px; /* 컨테이너 너비를 조금 넓힘 */
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+    border-left: 5px solid #ffc107;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* --- 컨트롤 및 인벤토리 --- */
+.inventory-controls {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#select-all-chars {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#deselect-all-chars {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#character-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    padding-left: 27px;
+    /* --- ⭐ 수정된 부분: max-height와 overflow 제거 --- */
+    /* max-height: 250px; */ 
+    /* overflow-y: auto; */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* **체크박스 숨기기** */
+#character-checkboxes input[type="checkbox"],
+.stage-group-content input[type="checkbox"] {
+    display: none; 
+}
+
+.char-checkbox-item label {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background: #f0f0f0; 
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85em;
+    user-select: none; 
+    width: 100px;
+    text-align: center;
+    height: 145px;
+}
+
+.char-checkbox-item label strong {
+    margin-top: 5px; /* 이름 위의 간격 줄이기 */
+    margin-bottom: 3px; /* 이름 아래의 간격 줄이기 */
+    line-height: 1.1; /* 줄 높이 최소화 */
+}
+
+.char-checkbox-item label span {
+    margin: 0; /* span 태그의 기본 마진 제거 */
+    padding: 0; /* span 태그의 기본 패딩 제거 */
+    line-height: 1.3; /* 줄 높이 최소화 */
+}
+
+/* 캐릭터 이미지 스타일 (사각형, 크기 증가) */
+.char-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 선택된 캐릭터 스타일 */
+.char-checkbox-item input[type="checkbox"]:checked + label {
+    background-color: #bae7ff; 
+    border-color: #096dd9;
+    font-weight: bold;
+}
+
+/* --- 스테이지 선택 그룹 --- */
+.stage-group {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.stage-group h3 {
+    margin-top: 0;
+    color: #007bff;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.stage-group-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.stage-group-content label {
+    display: block;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    position: relative; 
+    min-height: 120px;
+}
+
+/* 스테이지 이미지 스타일 (정사각형, 크기 축소) */
+.stage-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+/* 선택된 스테이지 스타일 */
+.stage-group-content input[type="checkbox"]:checked + label {
+    background-color: #d4edda;
+    border-color: #155724;
+    font-weight: bold;
+}
+
+
+/* --- 결과 및 추천 (기존 유지) --- */
+#run-simulation {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.placement-card {
+    border: 2px solid #007bff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #e9f7ff;
+}
+
+.placement-success {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.placement-fail {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.placement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.role { color: #dc3545; font-weight: bold; }
+.trait { color: #ff9800; font-weight: bold; }
+.info-fail { color: #dc3545; font-weight: bold; }
+
+#recommendation-results {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff3e0;
+    border: 1px solid #ff9800;
+    border-radius: 8px;
+}
+
+.recommendation-fail-msg {
+    border-color: #ff9800 !important;
+    background-color: #fff8e1 !important;
+}

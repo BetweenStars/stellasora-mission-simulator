@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐릭터 의뢰 시뮬레이터 V5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>캐릭터 의뢰 시뮬레이터 ⚔️</h1>
+
+        <section id="character-inventory">
+            <h2>보유 캐릭터</h2>
+            <div class="inventory-controls">
+                <button id="select-all-chars" class="control-btn">✅ 일괄 선택</button>
+                <button id="deselect-all-chars" class="control-btn">❌ 일괄 해제</button>
+            </div>
+            <div id="character-checkboxes">
+            </div>
+            <p>선택된 캐릭터 수: <span id="owned-count">0</span>명</p>
+        </section>
+
+        <section id="stage-selection">
+            <h2>스테이지 선택 (최대 4개)</h2>
+            <div id="stage-groups">
+            </div>
+        </section>
+
+        <button id="run-simulation">자동 배치 실행</button>
+
+        <section id="result">
+            <h2>배치 결과</h2>
+            <div id="placement-results">
+                <p>보유 캐릭터와 스테이지를 선택하고 '자동 배치 실행' 버튼을 눌러주세요.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
