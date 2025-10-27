@@ -39,6 +39,33 @@ section {
     border-radius: 8px;
 }
 
+/* --- 점수 최적화 관련 스타일 --- */
+.optimization-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.stage-score-info {
+    background-color: #e8f4fd;
+    border-left: 4px solid #007bff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.char-score {
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85em;
+}
+
 /* --- 컨트롤 및 인벤토리 --- */
 .inventory-controls {
     margin-bottom: 15px;
@@ -72,7 +99,7 @@ section {
     padding: 10px;
     padding-left: 27px;
     /* --- ⭐ 수정된 부분: max-height와 overflow 제거 --- */
-    /* max-height: 250px; */ 
+    /* max-height: 250px; */
     /* overflow-y: auto; */
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -80,23 +107,23 @@ section {
 }
 
 /* **체크박스 숨기기** */
-#character-checkboxes input[type="checkbox"],
-.stage-group-content input[type="checkbox"] {
-    display: none; 
+#character-checkboxes input[type='checkbox'],
+.stage-group-content input[type='checkbox'] {
+    display: none;
 }
 
 .char-checkbox-item label {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f0f0f0; 
+    background: #f0f0f0;
     padding: 10px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 0.85em;
-    user-select: none; 
+    user-select: none;
     width: 100px;
     text-align: center;
     height: 145px;
@@ -122,12 +149,12 @@ section {
     border-radius: 5px;
     margin-bottom: 5px;
     border: 2px solid #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* 선택된 캐릭터 스타일 */
-.char-checkbox-item input[type="checkbox"]:checked + label {
-    background-color: #bae7ff; 
+.char-checkbox-item input[type='checkbox']:checked + label {
+    background-color: #bae7ff;
     border-color: #096dd9;
     font-weight: bold;
 }
@@ -163,7 +190,7 @@ section {
     cursor: pointer;
     transition: all 0.2s;
     user-select: none;
-    position: relative; 
+    position: relative;
     min-height: 120px;
 }
 
@@ -179,12 +206,11 @@ section {
 }
 
 /* 선택된 스테이지 스타일 */
-.stage-group-content input[type="checkbox"]:checked + label {
+.stage-group-content input[type='checkbox']:checked + label {
     background-color: #d4edda;
     border-color: #155724;
     font-weight: bold;
 }
-
 
 /* --- 결과 및 추천 (기존 유지) --- */
 #run-simulation {
@@ -225,9 +251,18 @@ section {
     padding: 0;
 }
 
-.role { color: #dc3545; font-weight: bold; }
-.trait { color: #ff9800; font-weight: bold; }
-.info-fail { color: #dc3545; font-weight: bold; }
+.role {
+    color: #059ee6;
+    font-weight: bold;
+}
+.trait {
+    color: #ff9800;
+    font-weight: bold;
+}
+.info-fail {
+    color: #dc3545;
+    font-weight: bold;
+}
 
 #recommendation-results {
     padding: 10px;
@@ -240,4 +275,9 @@ section {
 .recommendation-fail-msg {
     border-color: #ff9800 !important;
     background-color: #fff8e1 !important;
+}
+
+.stage-name{
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
