@@ -24,6 +24,7 @@ const characters = [
     { name: "코제트", role: "서포터", trait: "지식추구", image: "images/char_cozt.png" },
     { name: "캐러멜", role: "딜러", trait: "기상천외", image: "images/char_carm.png" },
     { name: "라루", role: "딜러", trait: "모험가", image: "images/char_laru.png" },
+    { name: "시아", role: "딜러", trait: "모험가", image: "images/char_shia.png" },
 ];
 
 const stagesData = [
@@ -1265,3 +1266,4 @@ window.addEventListener('load', () => {
     const testButton = document.getElementById('run-simulation');
     console.log('testButton:', testButton);
 });
+
